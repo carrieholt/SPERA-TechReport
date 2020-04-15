@@ -15,6 +15,19 @@ Although technically complex, closed-loop simulation models can be broken down i
 knitr::include_graphics("knitr-figs-pdf/MSEschematic.png")
 ```
 
+Yet these models are of little use without quantitative and realistic rebuilding goals that are actually relevant to management, and that can be used to assess the performance of management procedures. Ideally, these goals should include three components: a threshold representing CU status (e.g. a level of spawner abundance), a target probability of reaching or avoiding the threshold, and a minimum/maximum number of years to reach the threshold.  
+
+Four goals of the simulation evaluation were identified through engagement with Fisheries Management at an initial Workshop in December 2017. These goals represented four different modules of the project. Efforts have focused on the first 3 to date, with consideration of the fourth only implemented in a cursory way and additional recommendations included in the final section below. Parenthesis highlight in which case studies and primary publications these goals were addressed.
+
+1. Evaluate impact of candidate harvest strategies on rebuilding (Case Study 1, Freshwater et al. 2019a,b)
+
+2. Evaluate the impact of uncertainty in productivity and associated trends on rebuilding (Case Study 1, Freshwater et al. 2019a,b). 
+
+3. Evaluate impacts of combinations of mixed and single-stock fisheries on rebuilding (Case Study 1, Freshwater et al. 2019b).
+
+4. Evaluate the impacts of uncertainties in assessment (changes in frequency and intensity of assessment) and from implementing management strategies (outcome uncertainties) on rebuilding and our ability to detect recovery. (Case Study 2)
+
+
 ```{r testtab}
 d <- structure(list(
   Year = c("2018", "2019", "2020"), 
