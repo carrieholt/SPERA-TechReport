@@ -5,5 +5,5 @@ rmd_files: ["index.Rmd",
             "03_results.Rmd",
             "04_discussion.Rmd",
             "05_bibliography.Rmd",
-            "06_appendix1.Rmd"]
+            "06_Appendices.Rmd"]
 delete_merged_file: true

@@ -1,2 +1,2 @@
-# appendix1
+# Appendices {#app:appendix}
 `r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
