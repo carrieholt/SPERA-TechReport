@@ -11,6 +11,10 @@ A principal goal of MSE is to determine how robust distinct management procedure
 Although technically complex, closed-loop simulation models can be broken down into relatively simple components, including stock dynamics, collection of spawner and harvest data, assessment of status, application of harvest decision rule, and implementation of a fishery (Fig. 1). The quantitative model described here can become the foundation for a future MSE processes that would be developed in collaboration with First Nations and stakeholders. The structure of the model is described in more detail in below. 
 
 
+```{r fig1}
+knitr::include_graphics("knitr-figs-pdf/MSEschematic.png")
+```
+
 ```{r testtab}
 d <- structure(list(
   Year = c("2018", "2019", "2020"), 
