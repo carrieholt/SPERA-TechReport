@@ -1,0 +1,3 @@
+#Appendix1
+`r if(knitr:::is_latex_output()) '\\Appendices'`
+`r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
