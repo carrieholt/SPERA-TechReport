@@ -60,7 +60,7 @@ knitr::include_graphics("knitr-figs-pdf/Catch_Spawner.png")
 ```
 
 
-## Summary of Case Study on Fraser River Sockeye Salmon
+## Summary of Case Study on Fraser River Sockeye Salmon (Case Study 1)
 
 We applied the quantitative tool first to a data-rich aggregate of 19 Fraser River sockeye salmon CUs to evaluate the impacts of various constant target exploitation rates and a “Total Allowable Mortality” (TAM) rule meant to represent a simplified version of the harvest control rule currently used for Fraser River sockeye salmon (see Freshwater et al. 2019 for details). We evaluated performance for aggregate spawner abundances against an arbitrary threshold of 3 million fish, and for aggregate catch against at threshold of 1 million fish, the minimum number required prior opening Canadian commercial fisheries. 
 
@@ -70,9 +70,9 @@ We found exploitation rates between 20 and 40% generally achieved both objective
 knitr::include_graphics("knitr-figs-pdf/Multistock.png")
 ```
 
-## Summary of Case Study on Area 3 (Nass River) Chum Salmon
+## Summary of Case Study on Nass River Chum Salmon (Case Study 2)
 
-The objective of the Area 3 Chum rebuilding plan as stated in the  Integrated Fisheries Management Plan (DFO 2019) is to: “protect Area 3 wild Chum and at the same time provide opportunities to retain enhanced US Chum in places and times where they are most abundant”. Management measures are in place to limit exploitation to below 10% to allow for rebuilding. Chum River in Area 3 are caught primarily as by-catch on Sockeye fishery in Canadian waters, with exploitation that is currently capped at 10% to allow for rebuilding of depleted CUs. The Nass River contains three CUs: Lower Nass, Portland Canal- Observatory, and Portland Inlet.
+The objective of the Nass River (Area 3) Chum rebuilding plan is to: “protect Area 3 wild Chum and at the same time provide opportunities to retain enhanced US Chum in places and times where they are most abundant” @DFO2019b. Management measures are in place to limit exploitation to below 10% to allow for rebuilding. Chum River in Area 3 are caught primarily as by-catch on Sockeye fishery in Canadian waters, with exploitation that is currently capped at 10% to allow for rebuilding of depleted CUs. The Nass River contains three CUs: Lower Nass, Portland Canal- Observatory, and Portland Inlet.
 
 Our goal was to evaluate the impacts of outcome uncertainty on probability of rebuilding for component CUs. Outcome uncertainties are uncertainties associated with the outcomes of implementing management strategies such as quotas or fixed exploitation rates due to for example, unreported catch. To what extent does variability in exploitation rates, occasionally above the 10% cap, limit ability for CUs to rebuild?  Outcome uncertainties were included in the model and parameterized using observed exploitation rates (including US exploitation), relative to the 10% limit. We found that when multiple sources of uncertainty were considered in the operating model (e.g., natural variability in recruitment and age-at-maturity and alternative scenarios of productivity) and management procedure (e.g., observation errors), the relative impact of reducing outcome uncertainties modest (Fig. \@ref(fig:fig6)). Although on average greater outcome uncertainty resulted in reduced spawner abundance and smaller catches over the long term because of intermittent overharvest, the additional sources of uncertainty tended swamp signals from outcome uncertainties. These results suggest that current 10% cap on Canadian exploitation rates appears sufficiently precautionary to support rebuilding, and any reductions in  outcome uncertainty would have minimal impacts on risks to rebuilding. 
 
@@ -82,21 +82,3 @@ knitr::include_graphics("knitr-figs-pdf/OU.png")
 
 
 
-
-```{r testtab}
-d <- structure(list(
-  Year = c("2018", "2019", "2020"), 
-  `Value 1` = c(1.12, 2.32, 3.67), 
-  `Value 2` = c(31.9, 2.8, 112.2)), 
-  row.names = c(NA, -3L), class = "data.frame")
-
-csasdown::csas_table(d,
-  align = c("c", "r", "r"),
-  caption = "Test table with a caption will be numbered automatically.")
-```
-
-See Table \@ref(tab:testtab) for the example table.
-
-See Figure \@ref(fig:fig1) for the example figure.
-
-\clearpage
