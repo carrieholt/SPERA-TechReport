@@ -53,7 +53,34 @@ The `plotAgDot` and `plotCUDot` functions provide summaries of multiple performa
 knitr::include_graphics("knitr-figs-pdf/agg_dot.png")
 ```
 
-The `plotAgTradeoff` and `plotCUTradeoff` functions plot a conservation metric on the x-axis and a catch metric on the y-axis to visualize how tradeoffs between objectives vary among management procedures or operating models. Such figures can be particularly useful in identifying subsets of management procedures that meet pre-specified objectives (e.g. minimum median return sizes and catches), while readily incorporating different operating models. For example, intermediate fixed exploitation rates or an abundance-based (TAM) harvest control rule may lead to optimal outcomes under reference productivity, but fail to meet threshold objectives when productivity is low (Fig. 3).
+The `plotAgTradeoff` and `plotCUTradeoff` functions plot a conservation metric on the x-axis and a catch metric on the y-axis to visualize how tradeoffs between objectives vary among management procedures or operating models. Such figures can be particularly useful in identifying subsets of management procedures that meet pre-specified objectives (e.g. minimum median return sizes and catches), while readily incorporating different operating models. For example, intermediate fixed exploitation rates or an abundance-based (TAM) harvest control rule may lead to optimal outcomes under reference productivity, but fail to meet threshold objectives when productivity is low (Fig. \@ref(fig:fig4).
+
+```{r fig4, fig.cap="Trade-offs between aggregate catch and escapement for fixed exploitation rate and total allowable mortality harvest control rules. Points represent median values and whiskers the 90th percentile interval across Monte Carlo trials.", out.width=250}
+knitr::include_graphics("knitr-figs-pdf/Catch_Spawner.png")
+```
+
+
+## Summary of Case Study on Fraser River Sockeye Salmon
+
+We applied the quantitative tool first to a data-rich aggregate of 19 Fraser River sockeye salmon CUs to evaluate the impacts of various constant target exploitation rates and a “Total Allowable Mortality” (TAM) rule meant to represent a simplified version of the harvest control rule currently used for Fraser River sockeye salmon (see Freshwater et al. 2019 for details). We evaluated performance for aggregate spawner abundances against an arbitrary threshold of 3 million fish, and for aggregate catch against at threshold of 1 million fish, the minimum number required prior opening Canadian commercial fisheries. 
+
+We found exploitation rates between 20 and 40% generally achieved both objectives, as did the TAM rule (Fig. \@ref(fig:fig4)). However, for several of the component CUs spawner abundances were below lower biological benchmarks in relatively high proportion of years (>25%) under this management procedure (e.g., Harrison, Late Stuart, Quensel, and Raft in Fig. \@ref(fig:fig5)).
+
+```{r fig5, fig.cap="Trade-offs between aggregate catch (millions of fish) and the proportion of years above the lower biological benchmark for various fixed exploitation rates (circles) and the total allowable mortality (TAM)  harvest control rule (triangle). Points represent median values and whiskers the 90th percentile interval across Monte Carlo trials."}
+knitr::include_graphics("knitr-figs-pdf/Multistock.png")
+```
+
+## Summary of Case Study on Area 3 (Nass River) Chum Salmon
+
+The objective of the Area 3 Chum rebuilding plan as stated in the  Integrated Fisheries Management Plan (DFO 2019) is to: “protect Area 3 wild Chum and at the same time provide opportunities to retain enhanced US Chum in places and times where they are most abundant”. Management measures are in place to limit exploitation to below 10% to allow for rebuilding. Chum River in Area 3 are caught primarily as by-catch on Sockeye fishery in Canadian waters, with exploitation that is currently capped at 10% to allow for rebuilding of depleted CUs. The Nass River contains three CUs: Lower Nass, Portland Canal- Observatory, and Portland Inlet.
+
+Our goal was to evaluate the impacts of outcome uncertainty on probability of rebuilding for component CUs. Outcome uncertainties are uncertainties associated with the outcomes of implementing management strategies such as quotas or fixed exploitation rates due to for example, unreported catch. To what extent does variability in exploitation rates, occasionally above the 10% cap, limit ability for CUs to rebuild?  Outcome uncertainties were included in the model and parameterized using observed exploitation rates (including US exploitation), relative to the 10% limit. We found that when multiple sources of uncertainty were considered in the operating model (e.g., natural variability in recruitment and age-at-maturity and alternative scenarios of productivity) and management procedure (e.g., observation errors), the relative impact of reducing outcome uncertainties modest (Fig. \@ref(fig:fig6)). Although on average greater outcome uncertainty resulted in reduced spawner abundance and smaller catches over the long term because of intermittent overharvest, the additional sources of uncertainty tended swamp signals from outcome uncertainties. These results suggest that current 10% cap on Canadian exploitation rates appears sufficiently precautionary to support rebuilding, and any reductions in  outcome uncertainty would have minimal impacts on risks to rebuilding. 
+
+```{r fig6, fig.cap="Trade-offs between median aggregate catch (1000s of fish) and the median aggregate spawner abundances (1000s fish) for various levels of outcome uncertainties (colours) and for fixed exploitation rate equal to 0.1 (circles) and 0.6 (triangles). Left and right panels represent low and average productivity, respectively. "}
+knitr::include_graphics("knitr-figs-pdf/OU.png")
+```
+
+
 
 
 ```{r testtab}
