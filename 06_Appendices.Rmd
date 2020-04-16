@@ -14,6 +14,49 @@ csasdown::csas_table(d,
   caption = "Test table with a caption will be numbered automatically.")
 ```
 
+
+```{r testtab2}
+
+d2 <- structure(list(
+  `Overarching Goal` = c("Rebuild depleted CUs", 
+                         "Minimize risk of loss", 
+                         "Avoid COSEWIC listing",
+                         "Maintain exploitation rates below sustainable levels",
+                         "Maximize catch and stability in catch",
+                         "Allocate catch to terminal vs. mixed-CU fisheries"),
+  `Performance Metrics` = c("Probability that all red-status CUs rebuild to above their lower rebuilding thresholds
+                            (e.g., lower WSP benchmark) within a given time frame.",
+                            "Proportion of years that all CUs are above a quasi-extirpation threshold across the 
+                            modelled time period. (Median over MC trials and 95% CIs)",
+                            "Short-term trends in spawner biomass over the last three generations. 
+                            (Median over MC trials and 95% CIs) COSEWIC Criterion A",
+                            "Mean exploitation rate relative to current UMSY for over the modelled time period. 
+                            (Median value over MC trials and 95% CIs)",
+                            "Proportion of years that mean catch for the CU-aggregate is above a minimum acceptable 
+                            level over the entire sampling period, in the short term (first 1-2 generations), or in 
+                            the long term (last 1-2 generations). (Median value over MC trials and 95% CIs)",
+                            "Proportion of catch in mixed-CU vs terminal fisheries averaged over the entire 
+                            sampling period (Median value over MC trials and 95% CIs)")),
+    row.names = c(NA, -6L), class = "data.frame" )
+ 
+#knitr::kable(d2, "latex")
+ 
+knitr::kable(d2, "latex", caption = "Examples of objectives and performance metrics that could be used to rebuild 
+      Pacific salmon CUs.", booktabs = T) %>%
+  kable_styling(full_width = F) %>%
+  column_spec(1, width ="1in") %>%
+  column_spec(2, width = "3in")  
+
+
+
+
+
+```
+
+
+
+
+
 See Table \@ref(tab:testtab) for the example table.
 
 See Figure \@ref(fig:fig1) for the example figure.
