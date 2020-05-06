@@ -15,47 +15,68 @@ csasdown::csas_table(d,
 ```
 
 
-```{r testtab2}
+## Example Objectives/Performance Metrics from Other Jurisdictions
 
-d2 <- structure(list(
-  `Overarching Goal` = c("Rebuild depleted CUs", 
-                         "Minimize risk of loss", 
-                         "Avoid COSEWIC listing",
-                         "Maintain exploitation rates below sustainable levels",
-                         "Maximize catch and stability in catch",
-                         "Allocate catch to terminal vs. mixed-CU fisheries"),
-  `Performance Metrics` = c("Probability that all red-status CUs rebuild to above their lower rebuilding thresholds
-                            (e.g., lower WSP benchmark) within a given time frame.",
-                            "Proportion of years that all CUs are above a quasi-extirpation threshold across the 
-                            modelled time period. (Median over MC trials and 95% CIs)",
-                            "Short-term trends in spawner biomass over the last three generations. 
-                            (Median over MC trials and 95% CIs) COSEWIC Criterion A",
-                            "Mean exploitation rate relative to current UMSY for over the modelled time period. 
-                            (Median value over MC trials and 95% CIs)",
-                            "Proportion of years that mean catch for the CU-aggregate is above a minimum acceptable 
-                            level over the entire sampling period, in the short term (first 1-2 generations), or in 
-                            the long term (last 1-2 generations). (Median value over MC trials and 95% CIs)",
-                            "Proportion of catch in mixed-CU vs terminal fisheries averaged over the entire 
-                            sampling period (Median value over MC trials and 95% CIs)")),
-    row.names = c(NA, -6L), class = "data.frame" )
- 
-#knitr::kable(d2, "latex")
- 
-knitr::kable(d2, "latex", caption = "Examples of objectives and performance metrics that could be used to rebuild 
-      Pacific salmon CUs.", booktabs = T) %>%
-  kable_styling(full_width = F) %>%
-  column_spec(1, width ="1in") %>%
-  column_spec(2, width = "3in")  
+Example 1 – Viability and Risk Assessment Procedure (VRAP) for Puget Sound Chinook salmon (NOAA 2017)
+
+VRAP is a process implemented by the National Marine Fisheries Service, NMFS, to calculate exploitation rates for Pacific Salmon in the US based on upper and lower benchmarks (Rebuilding Escapement Threshold (RET) and Critical Escapement Threshold (CET), respectively). For each population, a RET is defined as spawner abundance at MSY (if stock-recruitment data are available), or an absolute abundance derived from the conservation literature in the absence of data, e.g., 1250 spawners for Puget Sound Chinook Salmon (NOAA 2017). A CET is defined as 5% of equilibrium spawner abundance, or an absolute abundance derived from the conservation literature, e.g., 200 spawners for Puget Sound Chinook Salmon. The rebuilding exploitation rate is set by evaluating performance over a range of exploitation rates and selecting the largest exploitation rate where less than 5% of simulation runs are below CET over 25 years, and the smallest exploitation rate where greater than 80% of runs are above RET over 25 years.
+
+Example 2 – US rebuilding plans for federally regulated fisheries under the Magnuson-Stevens Act (National Research Council 2014)
+
+For federally regulated fisheries in the US (including Pacific Salmon) the Magnuson-Stevens Acts legally mandates the implementation of rebuilding plans for overfished stocks. NFMS guidelines for rebuilding describe the requirements based on: 
+
+- A target stock size
+
+- A minimum stock size, below which rebuilding plans are required (e.g., for Pacific salmon, spawning biomass < 0.5 or 0.75 MSY levels; National Research Council 2014)
+
+- A minimum acceptable  probability of rebuilding to the target, set by management
+
+- Target time for recovery (bounded by minimum and maximum times for recovery), where these times are specified within a closed-loop stock dynamics model in the absence of fishing
+
+Rebuilding analyses are comprised of projections in a closed-loop simulation model for a range of fishing mortality rates to identify those that achieve rebuilding targets with an acceptable probability within the maximum time frame. A set of decision rules are implemented if stocks fail to rebuild in order to revise targets and fishing mortality rates within the rebuilding plan (Wetzel and Punt 2016).
+
+Example 3- The Committee on the Status of Endangered Wildlife in Canada, COSEWIC 
+
+COSEWIC has identified critical thresholds on abundances to delineate conservation risks for Endangered and Threatened populations at 250 and 1000 mature individuals, or 2500 and 10,000 mature individuals when combined with declining trajectories, respectively. COSEWIC further identified thresholds on probabilities of extirpation for Endangered and Threatened categories, at 10% over 100 years and 20% over 5 generations or 20 years, whichever is longer.  These thresholds are analogous to those used by IUCN and are derived from conservation literature on population dynamics at small population sizes across terrestrial and aquatic species.
 
 
 
+```{r CandThresh}
+dat <- tribble(
+  ~`Category`, ~`Description`, ~`Threshold`, ~`Reference`,
+  "Wild Salmon Policy lower benchmark1",
+  "Level which provides a substantial buffer between it and levels that would lead to CU being considered at risk of extirpation by COSEWIC",
+  "*S*~gen~, spawner abundances that will recover to SMSY within 1 generation in the absence of fishing under equilibrium conditions",
+  "[@holt2009]"
+#  "", "", "25th percentile of observed spawner abundances", "[@holt2018]",
+#  "", "", "20% of spawners at maximum recruitment (*S*~MAX~)", "[@johnston2002; @shortreed2001; @holt2009]" 
+  )
+  
 
+dat %>% 
+  mutate_all(kableExtra::linebreak) %>%
+  csas_table(format = "latex", escape = FALSE, font_size = 11, 
+             caption = "Candidate lower rebuilding thresholds and examples from case studies") %>%
+  #kableExtra::row_spec(4, hline_after = TRUE) %>% 
+  kableExtra::column_spec(1, width = "7em") %>%
+  kableExtra::column_spec(2, width = "13em") %>%
+  kableExtra::column_spec(3, width = "13em") %>%
+  kableExtra::column_spec(4, width = "8em")
+             
+             
 
 ```
 
+1WSP and COSEWIC assess number of mature individuals as the geometric mean spawner abundance over the most recent generation to compare against thresholds. In contrast, other assessments have compared similar thresholds against total population size calculated as the product of the mean spawner abundances × the average generation length (Allendorf et al. 1997; Winship et al. 2015) to assess risks of extinction related to genetic effects. NOAA’s RET reported in fish/year.
+
+2Imminent risk of extirpation
+
+3Likely to become an endangered if nothing is done to reverse the factors leading to its extirpation
+
+4Time-frames for rebuilding are generally not specified
 
 
-```{r multi-row-table}
+```{r ExamPMs}
 dat <- tribble(
   ~`Overarching goal`, ~`Performance metrics`,
   "Rebuild depleted CUs",
