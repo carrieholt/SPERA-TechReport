@@ -43,30 +43,91 @@ COSEWIC has identified critical thresholds on abundances to delineate conservati
 
 ```{r CandThresh}
 dat <- tribble(
-  ~`Category`, ~`Description`, ~`Threshold`, ~`Reference`,
-  "Wild Salmon Policy lower benchmark*",
-  "Level which provides a substantial buffer between it and levels that would lead to CU being considered at risk of extirpation by COSEWIC",
-  "\\emph{S}gen, spawner abundances that will recover to SMSY within 1 generation in the absence of fishing under equilibrium conditions", "1"
-  #"", "",  "-25th percentile of observed spawner abundances", "2"
-  #"", "", "-20% of spawners at maximum recruitment (Smax)", "3,4,5"
+  ~`Category`, ~`Description`, ~`Threshold (Reference)`,
+  "Wild Salmon Policy lower benchmark*", "Level which provides a substantial buffer between it and levels that would lead to CU being considered at risk of extirpation by COSEWIC",
+  "\\emph{Sgen}, spawner abundances that will recover to \\emph{SMSY} within 1 generation in the absence of fishing under equilibrium conditions  (1)", 
+  " ", " ",
+  "25th percentile of observed spawner abundances (2)",
+  " ", " ",
+  "20\\% of spawners at maximum recruitment, \\emph{Smax} (1,3,4)",
+  "COSEWIC thresholds*", "Endangered (Criterion D)", "250 (5)",
+  " ", "Threatened (Criterion D)", "1000 (5)",
+  " ", "Endangered, when combined with continuing decline (Criterion C)", "2500 (5)",
+  " ", "Threatened, when combined with continuing decline (Criterion C)", "10,000 (5)",
+  "Pacific Fisheries Management Council, US", 
+  "Definition of “overfished” for Pacific salmon, below which rebuilding plans must be developed",
+  "0.5\\emph{BMSY}  or 0.75\\emph{BMSY} (6)",
+  "NMFS, Viability and Risk Assessment Procedure (VRAP) for computing Rebuilding Exploitation Rates (RERs)",
+  "Critical escapement threshold (CET), represents a boundary below which uncertainties about population dynamics increase substantially related to genetic and environmental risks",
+  "5\\% equilibrium spawner abundances, or 42-417 annual spawners (7)",
+  " ", " ", "200 annual spawners (for Puget Sound Chinook Salmon) (7,8)",
+  "Cultus Lake Sockeye Salmon Recovery Objectives", "Ensure the genetic integrity of the population ",
+  "1000 successful adult spawners, averaged over a generation, with no fewer than 500 in any one year (9)",
+  "Sakinaw Lake Sockeye Recovery Objective", "Safeguard genetic diversity with interim milestones",
+  "500 natural adult spawners after 2 generations and 1000 after 4 generations (10)",
+  "Interior Fraser Coho Salmon Recovery Objectives", 
+  "Secure the long term viability and diversity of naturally spawners", 
+  "1000 natural spawners in at least half of sub-populations, averaged over 3 years (11)"
+  
   )
   
 
 dat %>% 
   mutate_all(kableExtra::linebreak) %>%
-  csas_table(format = "latex", escape = FALSE, font_size = 11, 
+  csas_table(format = "latex", escape = FALSE, font_size = 11, linesep = "\\addlinespace",
              caption = "Candidate lower rebuilding thresholds and examples from case studies") %>%
   #kableExtra::row_spec(4, hline_after = TRUE) %>% 
-  kableExtra::column_spec(1, width = "7em") %>%
-  kableExtra::column_spec(2, width = "13em") %>%
-  kableExtra::column_spec(3, width = "13em") %>%
-  kableExtra::column_spec(4, width = "8em")
+  kableExtra::column_spec(1, width = "10em") %>%
+  kableExtra::column_spec(2, width = "15em") %>%
+  kableExtra::column_spec(3, width = "15em")
+ 
              
              
 
 ```
 
-*WSP and COSEWIC assess number of mature individuals as the geometric mean spawner abundance over the most recent generation to compare against thresholds. In contrast, other assessments have compared similar thresholds against total population size calculated as the product of the mean spawner abundances × the average generation length [@allendorf1997] to assess risks of extinction related to genetic effects. NOAA [-@noaa2017] reported in fish/year.
+
+\footnotesize *WSP and COSEWIC assess number of mature individuals as the geometric mean spawner abundance over the most recent generation to compare against thresholds. In contrast, other assessments have compared similar thresholds against total population size calculated as the product of the mean spawner abundances × the average generation length [@allendorf1997] to assess risks of extinction related to genetic effects. NOAA [-@noaa2017] reported in fish/year.
+(1) [@holt2009]  
+(2) [@holt2018]  
+(3) [@johnston2002]  
+(4) [@shortreed2001]  
+(5) [@cosewic2015]  
+(6) [@nrc2014]  
+(7) [@mcelhaney2000]  
+(8) [@noaa2017]  
+(9) [@cultus2009]  
+(10) [@sakinaw2005]
+
+
+
+
+```{r CandExt}
+dat <- tribble(
+  ~`Category`, ~`Description`, ~`Threshold (Reference)`,
+    "From the conservation literature", "Quasi-extirpation threshold for salmon", 
+  "100 fish (50-250) for four consecutive years (1,2)",
+  "NMFS, Viability and Risk Assessment Procedure (VRAP) for computing Rebuilding Exploitation Rates (RERs)",
+  "Quasi-extirpation threshold for salmon", "250 fish/generation (3)",
+  "COSEWIC definitions for categories for extirpation", "Threatened",
+  "10\\% chance of extirpation over 100 years (3)", 
+  " ", "Endangered", "20\\% chance of extirpation within the longer of 5 generations or 20 years"
+  )
+  
+
+dat %>% 
+  mutate_all(kableExtra::linebreak) %>%
+  csas_table(format = "latex", escape = FALSE, font_size = 11, linesep = "\\addlinespace",
+             caption = "Candidate extirpation thresholds and examples from case studies") %>%
+  #kableExtra::row_spec(4, hline_after = TRUE) %>% 
+  kableExtra::column_spec(1, width = "10em") %>%
+  kableExtra::column_spec(2, width = "15em") %>%
+  kableExtra::column_spec(3, width = "15em")
+ 
+             
+             
+
+```
 
 
 
