@@ -2,137 +2,28 @@
 `r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
 
 
-```{r testtab}
-d <- structure(list(
-  Year = c("2018", "2019", "2020"), 
-  `Value 1` = c(1.12, 2.32, 3.67), 
-  `Value 2` = c(31.9, 2.8, 112.2)), 
-  row.names = c(NA, -3L), class = "data.frame")
-
-csasdown::csas_table(d,
-  align = c("c", "r", "r"),
-  caption = "Test table with a caption will be numbered automatically.")
-```
-
-
 ## Example Objectives/Performance Metrics from Other Jurisdictions
 
-Example 1 – Viability and Risk Assessment Procedure (VRAP) for Puget Sound Chinook salmon (NOAA 2017)
+Example 1 – Viability and Risk Assessment Procedure (VRAP) for Puget Sound Chinook salmon [@noaa2017]
 
-VRAP is a process implemented by the National Marine Fisheries Service, NMFS, to calculate exploitation rates for Pacific Salmon in the US based on upper and lower benchmarks (Rebuilding Escapement Threshold (RET) and Critical Escapement Threshold (CET), respectively). For each population, a RET is defined as spawner abundance at MSY (if stock-recruitment data are available), or an absolute abundance derived from the conservation literature in the absence of data, e.g., 1250 spawners for Puget Sound Chinook Salmon (NOAA 2017). A CET is defined as 5% of equilibrium spawner abundance, or an absolute abundance derived from the conservation literature, e.g., 200 spawners for Puget Sound Chinook Salmon. The rebuilding exploitation rate is set by evaluating performance over a range of exploitation rates and selecting the largest exploitation rate where less than 5% of simulation runs are below CET over 25 years, and the smallest exploitation rate where greater than 80% of runs are above RET over 25 years.
+VRAP is a process implemented by the National Marine Fisheries Service, NMFS, to calculate exploitation rates for Pacific Salmon in the US based on upper and lower benchmarks (Rebuilding Escapement Threshold (RET) and Critical Escapement Threshold (CET), respectively). For each population, a RET is defined as spawner abundance at MSY (if stock-recruitment data are available), or an absolute abundance derived from the conservation literature in the absence of data, e.g., 1250 spawners for Puget Sound Chinook Salmon [@noaa2017]. A CET is defined as 5% of equilibrium spawner abundance, or an absolute abundance derived from the conservation literature, e.g., 200 spawners for Puget Sound Chinook Salmon. The rebuilding exploitation rate is set by evaluating performance over a range of exploitation rates and selecting the largest exploitation rate where less than 5% of simulation runs are below CET over 25 years, and the smallest exploitation rate where greater than 80% of runs are above RET over 25 years.
 
-Example 2 – US rebuilding plans for federally regulated fisheries under the Magnuson-Stevens Act (National Research Council 2014)
+Example 2 – US rebuilding plans for federally regulated fisheries under the Magnuson-Stevens Act [@nrc2014]
 
-For federally regulated fisheries in the US (including Pacific Salmon) the Magnuson-Stevens Acts legally mandates the implementation of rebuilding plans for overfished stocks. NFMS guidelines for rebuilding describe the requirements based on: 
+For federally regulated fisheries in the US (including Pacific Salmon) the Magnuson-Stevens Acts legally mandates the implementation of rebuilding plans for overfished stocks. NFMS guidelines for rebuilding describe the requirements based on:  
 
-- A target stock size
-
-- A minimum stock size, below which rebuilding plans are required (e.g., for Pacific salmon, spawning biomass < 0.5 or 0.75 MSY levels; National Research Council 2014)
-
-- A minimum acceptable  probability of rebuilding to the target, set by management
-
+- A target stock size  
+- A minimum stock size, below which rebuilding plans are required (e.g., for Pacific salmon, spawning biomass < 0.5 or 0.75 MSY levels; @nrc2014)  
+- A minimum acceptable  probability of rebuilding to the target, set by management  
 - Target time for recovery (bounded by minimum and maximum times for recovery), where these times are specified within a closed-loop stock dynamics model in the absence of fishing
 
-Rebuilding analyses are comprised of projections in a closed-loop simulation model for a range of fishing mortality rates to identify those that achieve rebuilding targets with an acceptable probability within the maximum time frame. A set of decision rules are implemented if stocks fail to rebuild in order to revise targets and fishing mortality rates within the rebuilding plan (Wetzel and Punt 2016).
+Rebuilding analyses are comprised of projections in a closed-loop simulation model for a range of fishing mortality rates to identify those that achieve rebuilding targets with an acceptable probability within the maximum time frame. A set of decision rules are implemented if stocks fail to rebuild in order to revise targets and fishing mortality rates within the rebuilding plan [@wetzel2016].
 
 Example 3- The Committee on the Status of Endangered Wildlife in Canada, COSEWIC 
 
 COSEWIC has identified critical thresholds on abundances to delineate conservation risks for Endangered and Threatened populations at 250 and 1000 mature individuals, or 2500 and 10,000 mature individuals when combined with declining trajectories, respectively. COSEWIC further identified thresholds on probabilities of extirpation for Endangered and Threatened categories, at 10% over 100 years and 20% over 5 generations or 20 years, whichever is longer.  These thresholds are analogous to those used by IUCN and are derived from conservation literature on population dynamics at small population sizes across terrestrial and aquatic species.
 
-
-
-```{r CandThresh}
-dat <- tribble(
-  ~`Category`, ~`Description`, ~`Threshold (Reference)`,
-  "Wild Salmon Policy lower benchmark*", "Level which provides a substantial buffer between it and levels that would lead to CU being considered at risk of extirpation by COSEWIC",
-  "\\emph{Sgen}, spawner abundances that will recover to \\emph{SMSY} within 1 generation in the absence of fishing under equilibrium conditions  (1)", 
-  " ", " ",
-  "25th percentile of observed spawner abundances (2)",
-  " ", " ",
-  "20\\% of spawners at maximum recruitment, \\emph{Smax} (1,3,4)",
-  "COSEWIC thresholds*", "Endangered (Criterion D)", "250 (5)",
-  " ", "Threatened (Criterion D)", "1000 (5)",
-  " ", "Endangered, when combined with continuing decline (Criterion C)", "2500 (5)",
-  " ", "Threatened, when combined with continuing decline (Criterion C)", "10,000 (5)",
-  "Pacific Fisheries Management Council, US", 
-  "Definition of “overfished” for Pacific salmon, below which rebuilding plans must be developed",
-  "0.5\\emph{BMSY}  or 0.75\\emph{BMSY} (6)",
-  "NMFS, Viability and Risk Assessment Procedure (VRAP) for computing Rebuilding Exploitation Rates (RERs)",
-  "Critical escapement threshold (CET), represents a boundary below which uncertainties about population dynamics increase substantially related to genetic and environmental risks",
-  "5\\% equilibrium spawner abundances, or 42-417 annual spawners (7)",
-  " ", " ", "200 annual spawners (for Puget Sound Chinook Salmon) (7,8)",
-  "Cultus Lake Sockeye Salmon Recovery Objectives", "Ensure the genetic integrity of the population ",
-  "1000 successful adult spawners, averaged over a generation, with no fewer than 500 in any one year (9)",
-  "Sakinaw Lake Sockeye Recovery Objective", "Safeguard genetic diversity with interim milestones",
-  "500 natural adult spawners after 2 generations and 1000 after 4 generations (10)",
-  "Interior Fraser Coho Salmon Recovery Objectives", 
-  "Secure the long term viability and diversity of naturally spawners", 
-  "1000 natural spawners in at least half of sub-populations, averaged over 3 years (11)"
-  
-  )
-  
-
-dat %>% 
-  mutate_all(kableExtra::linebreak) %>%
-  csas_table(format = "latex", escape = FALSE, font_size = 11, linesep = "\\addlinespace",
-             caption = "Candidate lower rebuilding thresholds and examples from case studies") %>%
-  #kableExtra::row_spec(4, hline_after = TRUE) %>% 
-  kableExtra::column_spec(1, width = "10em") %>%
-  kableExtra::column_spec(2, width = "15em") %>%
-  kableExtra::column_spec(3, width = "15em")
- 
-             
-             
-
-```
-
-
-\footnotesize *WSP and COSEWIC assess number of mature individuals as the geometric mean spawner abundance over the most recent generation to compare against thresholds. In contrast, other assessments have compared similar thresholds against total population size calculated as the product of the mean spawner abundances × the average generation length [@allendorf1997] to assess risks of extinction related to genetic effects. NOAA [-@noaa2017] reported in fish/year.
-(1) [@holt2009]  
-(2) [@holt2018]  
-(3) [@johnston2002]  
-(4) [@shortreed2001]  
-(5) [@cosewic2015]  
-(6) [@nrc2014]  
-(7) [@mcelhaney2000]  
-(8) [@noaa2017]  
-(9) [@cultus2009]  
-(10) [@sakinaw2005]
-
-
-
-
-```{r CandExt}
-dat <- tribble(
-  ~`Category`, ~`Description`, ~`Threshold (Reference)`,
-    "From the conservation literature", "Quasi-extirpation threshold for salmon", 
-  "100 fish (50-250) for four consecutive years (1,2)",
-  "NMFS, Viability and Risk Assessment Procedure (VRAP) for computing Rebuilding Exploitation Rates (RERs)",
-  "Quasi-extirpation threshold for salmon", "250 fish/generation (3)",
-  "COSEWIC definitions for categories for extirpation", "Threatened",
-  "10\\% chance of extirpation over 100 years (3)", 
-  " ", "Endangered", "20\\% chance of extirpation within the longer of 5 generations or 20 years"
-  )
-  
-
-dat %>% 
-  mutate_all(kableExtra::linebreak) %>%
-  csas_table(format = "latex", escape = FALSE, font_size = 11, linesep = "\\addlinespace",
-             caption = "Candidate extirpation thresholds and examples from case studies") %>%
-  #kableExtra::row_spec(4, hline_after = TRUE) %>% 
-  kableExtra::column_spec(1, width = "10em") %>%
-  kableExtra::column_spec(2, width = "15em") %>%
-  kableExtra::column_spec(3, width = "15em")
- 
-             
-             
-
-```
-
-```{r footnotetest}
-x <- knitr::kable(head(mtcars), "latex")
-add_footnote(x, c("footnote 1", "footnote 2"), notation = "number")
-```
+See Appendix Tables \@ref(tab:ExamPMs), \@ref(tab:CandThresh),\@ref(tab:CandExt), and \@ref(tab:CandUpp) for example performance metrics and thresholds from other case studies.
 
 ```{r ExamPMs}
 dat <- tribble(
@@ -185,8 +76,221 @@ dat %>%
 
 
 
-See Table \@ref(tab:testtab) for the example table.
+```{r CandThresh}
+dat <- tribble(
+  ~`Category`, ~`Description`, ~`Threshold (Reference)`,
+  "Wild Salmon Policy lower benchmark*", "Level which provides a substantial buffer between it and levels that would lead to CU being considered at risk of extirpation by \\emph{COSEWIC}",
+  "\\emph{Sgen}, spawner abundances that will recover to \\emph{SMSY} within 1 generation in the absence of fishing under equilibrium conditions  (1)", 
+  " ", " ",
+  "25th percentile of observed spawner abundances (2)",
+  " ", " ",
+  "20\\% of spawners at maximum recruitment, \\emph{Smax} (1,3,4)",
+  "\\emph{COSEWIC} thresholds*", "Endangered (Criterion D)", "250 (5)",
+  " ", "Threatened (Criterion D)", "1000 (5)",
+  " ", "Endangered, when combined with continuing decline (Criterion C)", "2500 (5)",
+  " ", "Threatened, when combined with continuing decline (Criterion C)", "10,000 (5)",
+  "Pacific Fisheries Management Council, US", 
+  "Definition of “overfished” for Pacific salmon, below which rebuilding plans must be developed",
+  "0.5\\emph{BMSY}  or 0.75\\emph{BMSY} (6)",
+  "NMFS, Viability and Risk Assessment Procedure (VRAP) for computing Rebuilding Exploitation Rates (RERs)",
+  "Critical escapement threshold (CET), represents a boundary below which uncertainties about population dynamics increase substantially related to genetic and environmental risks",
+  "5\\% equilibrium spawner abundances, or 42-417 annual spawners (7)",
+  " ", " ", "200 annual spawners (for Puget Sound Chinook Salmon) (7,8)",
+  "Cultus Lake Sockeye Salmon Recovery Objectives", "Ensure the genetic integrity of the population ",
+  "1000 successful adult spawners, averaged over a generation, with no fewer than 500 in any one year (9)",
+  "Sakinaw Lake Sockeye Recovery Objective", "Safeguard genetic diversity with interim milestones",
+  "500 natural adult spawners after 2 generations and 1000 after 4 generations (10)",
+  "Interior Fraser Coho Salmon Recovery Objectives", 
+  "Secure the long term viability and diversity of naturally spawners", 
+  "1000 natural spawners in at least half of sub-populations, averaged over 3 years (11)"
+  
+  )
+  
 
-See Figure \@ref(fig:fig1) for the example figure.
+dat %>% 
+  mutate_all(kableExtra::linebreak) %>%
+  csas_table(format = "latex", escape = FALSE, font_size = 11, linesep = "\\addlinespace",
+             caption = "Candidate lower rebuilding thresholds and examples from case studies") %>%
+  #kableExtra::row_spec(4, hline_after = TRUE) %>% 
+  kableExtra::column_spec(1, width = "10em") %>%
+  kableExtra::column_spec(2, width = "15em") %>%
+  kableExtra::column_spec(3, width = "15em")
+ 
+             
+             
+
+```
+\footnotesize *WSP and COSEWIC assess number of mature individuals as the geometric mean spawner abundance over the most recent generation to compare against thresholds. In contrast, other assessments have compared similar thresholds against total population size calculated as the product of the mean spawner abundances × the average generation length [@allendorf1997] to assess risks of extinction related to genetic effects. NOAA [-@noaa2017] reported in fish/year.  
+(1) [@holt2009]  
+(2) [@holt2018]  
+(3) [@johnston2002]  
+(4) [@shortreed2001]  
+(5) [@cosewic2015]  
+(6) [@nrc2014]  
+(7) [@mcelhaney2000]  
+(8) [@noaa2017]  
+(9) [@cultus2009]  
+(10) [@sakinaw2005]
+
+
+
+
+```{r CandExt}
+dat <- tribble(
+  ~`Category`, ~`Description`, ~`Threshold (Reference)`,
+    "From the conservation literature", "Quasi-extirpation threshold for salmon", 
+  "100 fish (50-250) for four consecutive years (1,2)",
+  "NMFS, Viability and Risk Assessment Procedure (VRAP) for computing Rebuilding Exploitation Rates (RERs)",
+  "Quasi-extirpation threshold for salmon", "250 fish/generation (3)",
+  "\\emph{COSEWIC} definitions for categories for extirpation", "Threatened",
+  "10\\% chance of extirpation over 100 years (4)", 
+  " ", "Endangered", "20\\% chance of extirpation within the longer of 5 generations or 20 years"
+  )
+  
+
+dat %>% 
+  mutate_all(kableExtra::linebreak) %>%
+  csas_table(format = "latex", escape = FALSE, font_size = 11, linesep = "\\addlinespace",
+             caption = "Candidate extirpation thresholds and examples from case studies") %>%
+  #kableExtra::row_spec(4, hline_after = TRUE) %>% 
+  kableExtra::column_spec(1, width = "10em") %>%
+  kableExtra::column_spec(2, width = "15em") %>%
+  kableExtra::column_spec(3, width = "15em")
+
+```
+\footnotesize (1) [@holt2011]  
+(2) [@allendorf1997]  
+(3) [@sands2012]  
+(4) [@cosewic2015]  
+
+
+```{r CandUpp}
+dat <- tribble(
+  ~`Category`, ~`Description`, ~`Threshold (Reference)`,
+    "Wild Salmon Policy upper benchmark", 
+  "Level expected to provide maximum catch on an average annual basis, given existing environmental conditions", 
+  "80\\% \\emph{SMSY} or \\emph{SMSY} (1)", "", "",
+  "50th percentile of observed spawner abundances (2)", "", "",
+  "40\\% of spawners at maximum recruitment (\\emph{SMAX}) (1)",
+  "NMFS, Viability and Risk Assessment Procedure (VRAP) for computing Rebuilding Exploitation Rates (RERs)",
+  "Rebuilding Escapement threshold (RET), where rebuilding plans are no longer required based on low risk of extirpation",
+  "SMSY or 250-2500 (3)", "", "",
+  "1250 (for Puget Sound Chinook Salmon) (3,4)",
+  "NMFA, Lower Columbia River Tule Chinook",
+  "Upper escapement threshold", 
+  "The larger of either the estimated spawning abundance that would produce modeled MSY, or the average natural origin spawning abundance over the time series analyzed (5)",
+  "Cultus Lake Sockeye Salmon Recovery Objectives",
+  "A level of abundance that will support ecosystem function and sustainable use over the long term",
+  "\\emph{SMSY} (or a \\%); a proportion of the productive capacity of the lake; historic abundance; the abundance at which ecosystem function is maintained (6)",
+  "Sakinaw Lake Sockeye Recovery Objective", 
+  "The level of abundance required to support ecosystem function and sustainable use over the long term",
+  "\\emph{SMSY}; the average number of spawners observed historically before the run collapsed; the number of spawners required to seed the lake above some minimum proportion of its productive capacity (7)", 
+  "Interior Fraser Coho Recovery Objective", 
+  "Long-term recovery goal so that societal objectives can be achieved", 
+  "1000 naturally spawning in all sub-populations (8)"
+  
+  )
+  
+
+dat %>% 
+  mutate_all(kableExtra::linebreak) %>%
+  csas_table(format = "latex", escape = FALSE, font_size = 11, linesep = "\\addlinespace",
+             caption = "Candidate upper rebuilding threshold and examples from case studies") %>%
+  #kableExtra::row_spec(4, hline_after = TRUE) %>% 
+  kableExtra::column_spec(1, width = "10em") %>%
+  kableExtra::column_spec(2, width = "15em") %>%
+  kableExtra::column_spec(3, width = "15em")
+
+```
+\footnotesize (1) [@holt2009]  
+(2) [@holt2018]  
+(3) [@mcelhaney2000]  
+(4) [@noaa2017]  
+(5) [@ford2007]  
+(6) [@cultus2009]  
+(7) [@sakinaw2005]  
+(8) [@ifrcoho2006]
+
+
+
+
+
+## Modules proposed for inclusion in simulation evaluation
+
+### Climate-driven changes in productivity of CUs
+
+Pacific salmon CUs often exhibit temporal variability in productivity [@peterman2012] that appears to be associated with ocean basin- and/or regional-scale changes in environmental conditions [@mantua1997; @mueter2002]. Changes in environmental or biological drivers (e.g. sea surface temperature, SST, competition) may moderate productivity via altered marine survival rates [@mueter2002] and may change patterns of coherence among CUs, resulting in increased synchrony [@kilduff2015]. Under anticipated climate change scenarios, the influence of large-scale environmental drivers on CU dynamics may limit efforts to rebuild CUs from depleted states. Is rebuilding even feasible under climate-driven reductions in productivity? Climate-driven variability in productivity will be simulated in the operating model by including short and  long-term patterns in productivity (e.g., random variations with autocorrelation, or regime-like step functions [@dorner2009] or persistent trends in productivity over time [@dorner2013]. Further scenarios of changes in covariation in recruitment dynamics among CUs under climate change will be considered. Climate projections for coastal SST (IPCC 2014) can be used to force temporal trends in productivity in the model given observed correlations between SST and productivity (as in @dorner2013). 
+
+Example Management Questions:  
+
+- Which MPs are associated with an acceptable high probability of rebuilding under low (similar to lowest observed) or variable productivity (e.g., similar to PDO-like cycles)?  
+- How does MP performance change under various IPCC scenarios of climate change?  
+- How does uncertainty in MP performance change when productivity trends are assumed to be cyclic (i.e., associated with regimes) vs. linear (i.e., associated with linear increase in SST)?  
+- How does synchrony (or asynchrony) in recruitment deviations among conservation units affect rebuilding performance among candidate MPs?
+
+### Mixed-CU fisheries
+Pacific salmon are often harvested in mixed-CU fisheries that contain both abundant and depleted CUs. Simulation tools can be used to quantify trade-offs between achieving rebuilding targets and maintaining access to fisheries, while aiding in the documentation of those decisions. Simulation tools can also be used to evaluate related questions, such as the extent to which shifting effort from mixed-CU to terminal fisheries might maintain catch levels while reducing incidental take of non-target CUs. We intend to design MPs that include terminal and mixed-stock fisheries.  Variable harvest rates among CUs in mixed-stock fisheries will be incorporated into the model via a combination of shared and CU-specific exploitation rates, with varying levels of associated uncertainty. 
+
+Example Management Questions:  
+
+- How large are the impacts of mixed-CU fisheries on low abundance CU’s rebuilding probabilities or time frames relative to other sources of variability in productivity (i.e. natural mortality)?  
+- Which MPs preserve low abundance CUs while still maintaining mixed-CU fisheries?  
+- By how much would rebuilding time frames and/or probabilities of rebuilding be improved by a greater emphasis on terminal fisheries relative to mixed-CU fisheries?  
+- How does varying exploitation rates in mixed-CU fisheries influence the availability of spawners to terminal fisheries?  
+- How is ability to achieve rebuilding targets impacted from shifts to terminal fisheries (e.g., First Nations and recreational), which tend to be associated with greater outcome uncertainties?
+
+
+### Age-structured exploitation rates
+
+Fisheries on Chinook Salmon are unique among Pacific salmon species in their exploitation of immature life stages. Age-specific exploitation rates can be incorporated into the model to better capture dynamics for Chinook Salmon. 
+
+Example Management Questions:
+
+- What is the relative performance of MPs on rebuilding and harvest objectives for Chinook Salmon?  
+- To what extent will the probability of rebuilding improve if fishing mortality on earlier age classes/smaller sizes is reduced?  
+### Observation error and survey effort
+
+Fisheries managers are required to adopt a precautionary approach when setting exploitation rates and, as a result, greater uncertainty in CU status is typically associated with reduced exploitation rates. By developing MPs that incorporate different levels of uncertainty in abundance estimates, we can explore how greater survey effort (e.g., catch monitoring and spawning ground escapement assessment programs) can lead to higher exploitation rates while maintaining the same probability of meeting rebuilding targets (or reduced survey effort will require reduced exploitation rates to meet rebuilding targets at the same probability). 
+
+Example Management Questions:
+
+- How does the performance of management procedures relative to one another change as survey effort and/or frequency and data quality improve?  
+- What is the difference in average catch between a data-rich and a data-limited CU assuming similar dynamics and rebuilding goals (e.g., value of improved surveys)?  
+- What component of the assessment (spawning escapement, CU-specific catch, age-at-maturity) has the greatest influence on rebuilding performance?  
+
+### Changes in habitat capacity
+
+Like productivity, the carrying capacity of a given CU may change through time due to the restoration or deterioration of freshwater habitat, or change in freshwater survival. Although these changes likely reflect different management actions outside the scope of this project, they could be incorporated in our model by making relatively coarse adjustments to the spawner-recruitment relationship in the operating model. This module could be extended from module 1 above.
+
+Example Management Questions:
+
+- Given observed declines and projected future declines in freshwater habitat capacity, what are implications for achieving rebuilding and harvest objectives?  
+- What is the relative impact of improvements to habitat capacity compared with reductions in exploitation on the ability to achieve rebuilding and harvest objectives? Is recovery more/less sensitive to changes in habitat capacity or exploitation?  
+
+### Depensation
+
+Evidence suggests that certain salmon CUs may exhibit depensation at low spawner abundances, i.e. low levels of per capita productivity despite negligible competition. These effects may be due to reduced success at finding mates, greater per capita mortality due to predation, or reduced genetic diversity and fitness. Various forms of depensation could be addressed by incorporating different CU recruit relationships across operating models.
+
+Example Management Questions:
+
+- What is the maximum exploitation rate that would have an acceptable low probability of quasi-extinction given depensation (though not necessarily achieving rebuilding objectives)?  
+- For severely depleted CUs, what are the impacts of various hypotheses on depensation on rebuilding potential? Can we expect recovery without additional management measures (e.g., enhancement)?  
+
+
+
+
+
+
+
+
+
+
+```{r footnotetest}
+x <- knitr::kable(head(mtcars), "latex")
+add_footnote(x, c("[@holt2009]", "footnote 2"), notation = "number")
+```
+
+
+
 
 \clearpage

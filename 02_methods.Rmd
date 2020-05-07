@@ -19,13 +19,10 @@ Yet these models are of little use without quantitative and realistic rebuilding
 
 Four goals of the simulation evaluation were identified through engagement with Fisheries Management at an initial Workshop in December 2017. These goals represented four different modules of the project. Efforts have focused on the first 3 to date, with consideration of the fourth only implemented in a cursory way and additional recommendations included in the final section below. Parenthesis highlight in which case studies and primary publications these goals were addressed.
 
-1. Evaluate impact of candidate harvest strategies on rebuilding (Case Study 1, @freshwater2019; @freshwater2020)
-
-2. Evaluate the impact of uncertainty in productivity and associated trends on rebuilding (Case Study 1, @freshwater2019; @freshwater2020). 
-
-3. Evaluate impacts of combinations of mixed and single-stock fisheries on rebuilding (Case Study 1, @freshwater2019).
-
-4. Evaluate the impacts of uncertainties in assessment (changes in frequency and intensity of assessment) and from implementing management strategies (outcome uncertainties) on rebuilding and our ability to detect recovery. (Case Study 2)
+1. Evaluate impact of candidate harvest strategies on rebuilding (Case Study 1, @freshwater2019; @freshwater2020)  
+2. Evaluate the impact of uncertainty in productivity and associated trends on rebuilding (Case Study 1, @freshwater2019; @freshwater2020).  
+3. Evaluate impacts of combinations of mixed and single-stock fisheries on rebuilding (Case Study 1, @freshwater2019).  
+4. Evaluate the impacts of uncertainties in assessment (changes in frequency and intensity of assessment) and from implementing management strategies (outcome uncertainties) on rebuilding and our ability to detect recovery. (Case Study 2)  
 
 
 The Appendix includes a complete list of modules considered (Section \@ref(app:appendix)).
