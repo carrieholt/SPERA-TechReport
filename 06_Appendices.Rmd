@@ -129,7 +129,10 @@ dat %>%
 
 ```
 
-
+```{r footnotetest}
+x <- knitr::kable(head(mtcars), "latex")
+add_footnote(x, c("footnote 1", "footnote 2"), notation = "number")
+```
 
 ```{r ExamPMs}
 dat <- tribble(
