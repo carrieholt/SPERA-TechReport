@@ -1,21 +1,21 @@
 # Quantitative Tool for Evaluating Rebuilding
 
-## Feed-back simulations
+## Feedback simulations
 
 Fisheries management is frequently tasked with implementing strategies that meet multiple, and often conflicting, broad objectives while remaining robust to sources of uncertainty. Management strategy evaluation (MSE) is a decision-making framework that allows scientists, managers, First Nations, and stakeholders to collaboratively develop and test alternative management procedures in a controlled environment. In the MSE framework a management procedure is the combination of (i) a data collection scheme, (ii) a method of assessing CU status, and (iii) management actions based on estimated CU status (i.e. harvest control rules). The MSE process begins with the identification of fully-specified objectives (i.e. time to and probability of reaching specific recovery targets) and the development of management procedure that could realistically be implemented to meet those objectives. 
 
-Once objectives and performance indicators have been identified, closed-loop computer simulations are used to apply and evaluate different management procedures. In these simulations, real-world CUs and fisheries are replaced by a series of models that represent several distinct processes: the dynamics of fish populations, observations of these populations, and the behaviour of the fishery. Together these models constitute an operating model that represents a hypothesis about how the “true” system behaves. The operating model is initially parameterized with historical data or representative values drawn from previous studies. 
+Once objectives and performance indicators have been identified, computer simulations are used to apply and evaluate different management procedures. In these simulations, real-world CUs and fisheries are replaced by a series of models that represent several distinct processes: the dynamics of fish populations, observations of these populations, and the behaviour of the fishery. Together these models constitute an operating model that represents a hypothesis about how the “true” system behaves. Importantly, tnese models include feedback from the impacts of management actions on the population size in the following year. The operating model is initially parameterized with historical data or representative values drawn from previous studies. 
 
 A principal goal of MSE is to determine how robust distinct management procedures are to sources of uncertainty (e.g. form of stock-recruit relationships, precision of spawner abundance estimates, and implementation of harvest control rules). Multiple dimensions of uncertainty are incorporated into an MSE by designing several operating models, with each model containing unique combinations of parameter values and underlying model structures that represents a specific hypothesis about the system’s behaviour. Different management procedures are then applied to each operating model creating a suite of unique scenarios (each scenario equals one operating model and one management procedure). Every scenario is then iterated across many time steps to incorporate stochasticity and explore how the system is likely to behave in the future (Figure 1). Finally, management procedures are evaluated relative to one another based on their mean performance across many trials. By comparing how management procedures perform across multiple operating models, MSE allows managers and stakeholders to assess trade-offs between exploitation/yield and conservation objectives under varying degrees of uncertainty. 
 
-Although technically complex, closed-loop simulation models can be broken down into relatively simple components, including stock dynamics, collection of spawner and harvest data, assessment of status, application of harvest decision rule, and implementation of a fishery (\@ref(fig:fig1)). The quantitative model described here can become the foundation for a future MSE processes that would be developed in collaboration with First Nations and stakeholders. The structure of the model is described in more detail in below. 
+Although technically complex, feedback or "closed-loop" simulation models can be broken down into relatively simple components, including stock dynamics, collection of spawner and harvest data, assessment of status, application of harvest decision rule, and implementation of a fishery (\@ref(fig:fig1)). The quantitative model described here can become the foundation for a future MSE processes that would be developed in collaboration with First Nations and stakeholders. The structure of the model is described in more detail below. 
 
 
 ```{r fig1, fig.cap="Schematic of closed-loop simulation within Management Strategy Evaluation.", out.width=250}
 knitr::include_graphics("knitr-figs-pdf/MSEschematic.png")
 ```
 
-Yet these models are of little use without quantitative and realistic rebuilding goals that are actually relevant to management, and that can be used to assess the performance of management procedures. Ideally, these goals should include three components: a threshold representing CU status (e.g. a level of spawner abundance), a target probability of reaching or avoiding the threshold, and a minimum/maximum number of years to reach the threshold.  
+These models are of little use without quantitative and realistic rebuilding goals that are actually relevant to management, and that can be used to assess the performance of management procedures. Ideally, these goals should include three components: a threshold representing CU status (e.g. a level of spawner abundance), a target probability of reaching or avoiding the threshold, and a minimum/maximum number of years to reach the threshold.  
 
 Four goals of the simulation evaluation were identified through engagement with Fisheries Management at an initial Workshop in December 2017. These goals represented four different modules of the project. Efforts have focused on the first 3 to date, with consideration of the fourth only implemented in a cursory way and additional recommendations included in the final section below. Parenthesis highlight in which case studies and primary publications these goals were addressed.
 
@@ -25,7 +25,7 @@ Four goals of the simulation evaluation were identified through engagement with 
 4. Evaluate the impacts of uncertainties in assessment (changes in frequency and intensity of assessment) and from implementing management strategies (outcome uncertainties) on rebuilding and our ability to detect recovery. (Case Study 2)  
 
 
-The Appendix includes a complete list of modules considered (Section \@ref(app:appendix)).
+The Appendix includes a complete list of modules considered.
 
 ## samSim- A Generic Simulation tool
 

@@ -25,6 +25,7 @@ COSEWIC has identified critical thresholds on abundances to delineate conservati
 
 See Appendix Tables \@ref(tab:ExamPMs), \@ref(tab:CandThresh),\@ref(tab:CandExt), and \@ref(tab:CandUpp) for example performance metrics and thresholds from other case studies.
 
+\pagebreak
 ```{r ExamPMs}
 dat <- tribble(
   ~`Overarching goal`, ~`Performance metrics`,
@@ -60,7 +61,7 @@ dat <- tribble(
 
 dat %>% 
   mutate_all(kableExtra::linebreak) %>%
-  csas_table(format = "latex", escape = FALSE, font_size = 11, linesep = "\\addlinespace",
+  csas_table(format = "latex", escape = FALSE, font_size = 9, linesep = "\\addlinespace",
              caption = "Examples of objectives and performance metric that could be used to rebuild Pacific salmon CUs") %>%
   #kableExtra::row_spec(4, hline_after = TRUE) %>% 
   #kableExtra::row_spec(11, hline_after = TRUE) %>% 
@@ -75,7 +76,7 @@ dat %>%
 ```
 
 
-
+\pagebreak
 ```{r CandThresh}
 dat <- tribble(
   ~`Category`, ~`Description`, ~`Threshold (Reference)`,
@@ -109,7 +110,7 @@ dat <- tribble(
 
 dat %>% 
   mutate_all(kableExtra::linebreak) %>%
-  csas_table(format = "latex", escape = FALSE, font_size = 11, linesep = "\\addlinespace",
+  csas_table(format = "latex", escape = FALSE, font_size = 9, linesep = "\\addlinespace",
              caption = "Candidate lower rebuilding thresholds and examples from case studies") %>%
   #kableExtra::row_spec(4, hline_after = TRUE) %>% 
   kableExtra::column_spec(1, width = "10em") %>%
@@ -120,7 +121,7 @@ dat %>%
              
 
 ```
-\footnotesize *WSP and COSEWIC assess number of mature individuals as the geometric mean spawner abundance over the most recent generation to compare against thresholds. In contrast, other assessments have compared similar thresholds against total population size calculated as the product of the mean spawner abundances × the average generation length [@allendorf1997] to assess risks of extinction related to genetic effects. NOAA [-@noaa2017] reported in fish/year.  
+\tiny *WSP and COSEWIC assess number of mature individuals as the geometric mean spawner abundance over the most recent generation to compare against thresholds. In contrast, other assessments have compared similar thresholds against total population size calculated as the product of the mean spawner abundances × the average generation length [@allendorf1997] to assess risks of extinction related to genetic effects. NOAA [-@noaa2017] reported in fish/year.  
 (1) [@holt2009]  
 (2) [@holt2018]  
 (3) [@johnston2002]  
@@ -131,7 +132,6 @@ dat %>%
 (8) [@noaa2017]  
 (9) [@cultus2009]  
 (10) [@sakinaw2005]
-
 
 
 
@@ -150,7 +150,7 @@ dat <- tribble(
 
 dat %>% 
   mutate_all(kableExtra::linebreak) %>%
-  csas_table(format = "latex", escape = FALSE, font_size = 11, linesep = "\\addlinespace",
+  csas_table(format = "latex", escape = FALSE, font_size = 9, linesep = "\\addlinespace",
              caption = "Candidate extirpation thresholds and examples from case studies") %>%
   #kableExtra::row_spec(4, hline_after = TRUE) %>% 
   kableExtra::column_spec(1, width = "10em") %>%
@@ -158,12 +158,12 @@ dat %>%
   kableExtra::column_spec(3, width = "15em")
 
 ```
-\footnotesize (1) [@holt2011]  
+\tiny (1) [@holt2011]  
 (2) [@allendorf1997]  
 (3) [@sands2012]  
 (4) [@cosewic2015]  
 
-
+\pagebreak
 ```{r CandUpp}
 dat <- tribble(
   ~`Category`, ~`Description`, ~`Threshold (Reference)`,
@@ -194,7 +194,7 @@ dat <- tribble(
 
 dat %>% 
   mutate_all(kableExtra::linebreak) %>%
-  csas_table(format = "latex", escape = FALSE, font_size = 11, linesep = "\\addlinespace",
+  csas_table(format = "latex", escape = FALSE, font_size = 9, linesep = "\\addlinespace",
              caption = "Candidate upper rebuilding threshold and examples from case studies") %>%
   #kableExtra::row_spec(4, hline_after = TRUE) %>% 
   kableExtra::column_spec(1, width = "10em") %>%
@@ -202,7 +202,7 @@ dat %>%
   kableExtra::column_spec(3, width = "15em")
 
 ```
-\footnotesize (1) [@holt2009]  
+\tiny (1) [@holt2009]  
 (2) [@holt2018]  
 (3) [@mcelhaney2000]  
 (4) [@noaa2017]  
@@ -212,8 +212,7 @@ dat %>%
 (8) [@ifrcoho2006]
 
 
-
-
+\normalsize
 
 ## Modules proposed for inclusion in simulation evaluation
 
@@ -247,7 +246,8 @@ Fisheries on Chinook Salmon are unique among Pacific salmon species in their exp
 Example Management Questions:
 
 - What is the relative performance of MPs on rebuilding and harvest objectives for Chinook Salmon?  
-- To what extent will the probability of rebuilding improve if fishing mortality on earlier age classes/smaller sizes is reduced?  
+- To what extent will the probability of rebuilding improve if fishing mortality on earlier age classes/smaller sizes is reduced?
+
 ### Observation error and survey effort
 
 Fisheries managers are required to adopt a precautionary approach when setting exploitation rates and, as a result, greater uncertainty in CU status is typically associated with reduced exploitation rates. By developing MPs that incorporate different levels of uncertainty in abundance estimates, we can explore how greater survey effort (e.g., catch monitoring and spawning ground escapement assessment programs) can lead to higher exploitation rates while maintaining the same probability of meeting rebuilding targets (or reduced survey effort will require reduced exploitation rates to meet rebuilding targets at the same probability). 
@@ -280,15 +280,6 @@ Example Management Questions:
 
 
 
-
-
-
-
-
-```{r footnotetest}
-x <- knitr::kable(head(mtcars), "latex")
-add_footnote(x, c("[@holt2009]", "footnote 2"), notation = "number")
-```
 
 
 
