@@ -5,7 +5,7 @@ report_number: nnn
 author: |
   Carrie A. Holt,
   Cameron Freshwater,
-  Kendra Holt
+  Kendra Holt,
   Ann-Marie Huang
 author_list: "Holt, C.A., Freshwater, C., Holt, K., and Huang, A.-M."
 region: Pacific Region
@@ -16,9 +16,9 @@ address: |
 phone: "(250) 756-7136"
 author_footnote: "Email: Carrie.Holt@dfo-mpo.gc.ca | telephone: (250) 756-7136"
 abstract: |
-  Here is the abstract text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  Rebuilding plans are required for depleted stocks under the Fish Stock Provisions of Canada’s revised Fisheries Act (2019) and DFO’s Sustainable Fisheries Framework (2009). The overall goal of this project was to create a tool for developing and evaluating the harvest component of rebuilding plans for Pacific salmon, which evaluates trade-offs between conservation objectives and other fisheries management objectives. This rebuilding tool can be used to explore performance of candidate rebuilding harvest strategies in the context of multiple mixed-stock fisheries and environmental forcing of population dynamics that may impact productivity and confound recovery efforts. This tool was scoped to focus on harvest actions before more detailed strategies that integrate multiple management interventions (e.g., habitat and hatcheries) can be developed to support rebuilding.  The outcomes from this project are intended to form the first step towards an integrated rebuilding plan that includes First Nations and stakeholders. In this first phase, we applied the tool to two case studies: Fraser Rivers sockeye salmon, a data-rich example, and Nass River chum salmon, which was relatively data limited. The tool can be expanded in future phases within a broader simulation framework and context of multiple stressors. The tool, `samSim`,  is freely accessible and documented in a public repository online. 
 abstract_other: |
-  Voici le résumé. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  Voici le résumé.
 output:
  csasdown::techreport_pdf:
  #csasdown::techreport_word:
