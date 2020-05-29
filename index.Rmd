@@ -5,7 +5,7 @@ report_number: nnn
 author: |
   Carrie A. Holt,
   Cameron Freshwater,
-  Kendra Holt,
+  Kendra R. Holt,
   Ann-Marie Huang
 author_list: "Holt, C.A., Freshwater, C., Holt, K., and Huang, A.-M."
 region: Pacific Region
