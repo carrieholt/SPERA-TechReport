@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Appendices {#app:appendix}
 `r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
 
@@ -15,7 +20,7 @@ For federally regulated fisheries in the US (including Pacific Salmon) the Magnu
 - A target stock size  
 - A minimum stock size, below which rebuilding plans are required (e.g., for Pacific salmon, spawning biomass < 0.5 or 0.75 MSY levels; @nrc2014)  
 - A minimum acceptable  probability of rebuilding to the target, set by management  
-- Target time for recovery (bounded by minimum and maximum times for recovery), where these times are specified within a closed-loop stock dynamics model in the absence of fishing
+- Target time for recovery bounded by minimum and maximum limits, where the minimum time (Tmin) is estimated using simulated stock projections in the absence of fishing and the maximum time is a function of both Tmin and the generation time of the species
 
 Rebuilding analyses are comprised of projections in a closed-loop simulation model for a range of fishing mortality rates to identify those that achieve rebuilding targets with an acceptable probability within the maximum time frame. A set of decision rules are implemented if stocks fail to rebuild in order to revise targets and fishing mortality rates within the rebuilding plan [@wetzel2016].
 
@@ -23,7 +28,7 @@ Example 3- The Committee on the Status of Endangered Wildlife in Canada, COSEWIC
 
 COSEWIC has identified critical thresholds on abundances to delineate conservation risks for Endangered and Threatened populations at 250 and 1000 mature individuals, or 2500 and 10,000 mature individuals when combined with declining trajectories, respectively. COSEWIC further identified thresholds on probabilities of extirpation for Endangered and Threatened categories, at 10% over 100 years and 20% over 5 generations or 20 years, whichever is longer.  These thresholds are analogous to those used by IUCN and are derived from conservation literature on population dynamics at small population sizes across terrestrial and aquatic species.
 
-See Appendix Tables \@ref(tab:ExamPMs), \@ref(tab:CandThresh),\@ref(tab:CandExt), and \@ref(tab:CandUpp) for example performance metrics and thresholds from other case studies.
+See Appendix Table \@ref(tab:ExamPMs) for example performance metrics linked to management objectives commonly considered for Pacific salmon. See Appendix Tables \@ref(tab:CandThresh),  \@ref(tab:CandExt) and \@ref(tab:CandUpp) for lower rebuilding thresholds, extirpation thresholds, and upper rebuilding thresholds used in other case studies.
 
 \pagebreak
 ```{r ExamPMs}
