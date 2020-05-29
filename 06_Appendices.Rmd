@@ -3,6 +3,7 @@ output:
   pdf_document: default
   html_document: default
 ---
+\newpage
 # Appendices {#app:appendix}
 `r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
 
