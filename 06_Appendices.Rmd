@@ -119,7 +119,7 @@ dat %>%
   csas_table(format = "latex", escape = FALSE, font_size = 9, linesep = "\\addlinespace",
              caption = "Candidate lower rebuilding thresholds and examples from case studies") %>%
   #kableExtra::row_spec(4, hline_after = TRUE) %>% 
-  kableExtra::column_spec(1, width = "10em") %>%
+  kableExtra::column_spec(1, width = "15em") %>%
   kableExtra::column_spec(2, width = "15em") %>%
   kableExtra::column_spec(3, width = "15em")
  
